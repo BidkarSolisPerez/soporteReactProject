@@ -5,6 +5,9 @@ label {
   margin-bottom: 1em; }
 
 input {
-  width: 20em; }
+  width: 15em; }
+
+form {
+  margin-bottom: 5em; }
 
 /*# sourceMappingURL=style.css.map */

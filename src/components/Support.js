@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AdAside from './adAside'
 
 class Support extends Component{
   constructor (props) {
@@ -78,9 +79,7 @@ class Support extends Component{
       </div>
       </div>
 
-      <div className="row">
-        <h1>Aca va un advice video</h1>
-      </div>
+      <AdAside />
 
       </div>
     );
