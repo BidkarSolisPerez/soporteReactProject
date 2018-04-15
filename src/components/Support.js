@@ -80,12 +80,14 @@ class Support extends Component{
       </div>
 
       <div className="col-5">
+      <center>
         <h1>Segunda columna</h1>
+      </center>
       </div>
       </div>
-
+      <center>
       <AdAside videos={myVids}/>
-
+      </center>
       </div>
     );
   }
