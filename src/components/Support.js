@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import AdAside from './adAside'
 
+var myVids = [
+  "//www.w3schools.com/html/mov_bbb.mp4",
+  "//www.w3schools.com/html/movie.mp4"
+];
+
 class Support extends Component{
   constructor (props) {
     super(props);
@@ -63,7 +68,7 @@ class Support extends Component{
         <label htmlFor="messageForm">Message:</label>
         <textarea
           rows={7}
-          cols={50}
+          cols={40}
           name="message"
           id="messageForm"
           value={this.state.message}
@@ -79,7 +84,7 @@ class Support extends Component{
       </div>
       </div>
 
-      <AdAside />
+      <AdAside videos={myVids}/>
 
       </div>
     );

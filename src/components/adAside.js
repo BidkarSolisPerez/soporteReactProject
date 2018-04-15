@@ -1,22 +1,43 @@
+import ReactDOM from "react-dom";
 import React, { Component } from "react";
-import ReactPlayer from 'react-player'
+//import ReactPlayer from 'react-player'
 
 class AdAside extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0,
+      src: this.props.videos[0]
+    };
+  }
 
-    render () {
+  componentDidMount() {
+    let video = ReactDOM.findDOMNode(this);
+    video.addEventListener("ended", e => {
+      if (this.state.index < this.props.videos.length - 1) {
+        let nextIndex = this.state.index + 1;
+        this.setState({
+          index: nextIndex,
+          src: this.props.videos[nextIndex]
+        });
+      }
+    });
+  }
+  componentDidUpdate(prevProps, prevState) {
+    let video = ReactDOM.findDOMNode(this);
+    video.play();
+  }
+  render() {
     return (
-    	<div className='player-wrapper'>
-        <ReactPlayer
-          url='https://vimeo.com/243556536'
-          className='react-player'
-          playing
-          width='100%'
-          height='100%'
-        />
-      </div>
-    )
+      <video
+        src={this.state.src}
+        controls
+        playsInline
+        autoPlay
+        muted
+      />
+    );
   }
 }
-
 
 export default AdAside;
